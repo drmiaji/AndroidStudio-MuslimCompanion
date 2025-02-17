@@ -12,10 +12,10 @@ android {
 
     defaultConfig {
         applicationId "id.derysudrajat.alif"
-        minSdk 21
-        targetSdk 33
-        versionCode 21010100
-        versionName "1.1.0"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -36,10 +36,18 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
+
     buildFeatures {
         viewBinding true
         compose true
     }
+    buildFeatures {
+        dataBinding true
+    }
+
     composeOptions {
         kotlinCompilerExtensionVersion '1.1.1'
     }
@@ -140,5 +148,9 @@ dependencies {
 
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.2.1'
+
+
+    //doa API
+    implementation 'com.github.florent37:expansionpanel:1.2.4'
 
 }

@@ -16,5 +16,5 @@ dependencyResolutionManagement {
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
 }
-rootProject.name = "Alif"
+rootProject.name = "Muslim Companion"
 include ':app'

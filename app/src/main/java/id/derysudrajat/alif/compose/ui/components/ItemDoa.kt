@@ -26,8 +26,8 @@ import id.derysudrajat.alif.data.model.DateSchedule
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ItemCalendar(
-    hijriDate: DateSchedule, onClick: () -> Unit
+fun ItemDoa(
+    onClick: () -> Unit
 ) {
     Card(
         modifier = Modifier
@@ -46,9 +46,11 @@ fun ItemCalendar(
                 }
                 .clip(RoundedCornerShape(8.dp))
                 .background(Primary10)) {
+
+                //ubah item doa
                 Image(
                     modifier = Modifier.padding(8.dp),
-                    painter = painterResource(id = R.drawable.ic_calendar),
+                    painter = painterResource(id = R.drawable.ic_praying),
                     contentDescription = ""
                 )
             }
@@ -57,25 +59,13 @@ fun ItemCalendar(
                     top.linkTo(icon.top)
                     start.linkTo(icon.end, margin = 16.dp)
                     bottom.linkTo(icon.bottom)
-                }, text = "Calendar"
+                }, text = "Daily Prayers"
             )
             TextBody(modifier = Modifier.constrainAs(event) {
                 top.linkTo(titleText.bottom, margin = 8.dp)
                 start.linkTo(titleText.start)
-            }, text = buildString {
-                if (hijriDate.holidays.isEmpty()) append("No Event Today")
-                else hijriDate.holidays.forEachIndexed { index, s ->
-                    append(s)
-                    if (index != hijriDate.holidays.size - 1) append("\n")
-                }
-            }, textColor = Primary)
+            }, text = "Doa-Doa Harian")
 
-            TextBody(modifier = Modifier.constrainAs(date) {
-                top.linkTo(event.bottom)
-                start.linkTo(titleText.start)
-            }, text = buildString {
-                append("${hijriDate.day} ${hijriDate.monthDesignation} ${hijriDate.year} ${hijriDate.yearDesignation}")
-            })
             Image(
                 modifier = Modifier.constrainAs(arrow) {
                     top.linkTo(parent.top)
@@ -90,7 +80,7 @@ fun ItemCalendar(
     }
 }
 
-val dummyCalendar = DateSchedule(
+val dummyDoaActivity = DateSchedule(
     1,
     7,
     "Ramadhan",
@@ -103,6 +93,6 @@ val dummyCalendar = DateSchedule(
 
 @Preview
 @Composable
-private fun PreviewItemCalendar() {
-    ItemCalendar(dummyCalendar) {}
+private fun PreviewItemDoa() {
+    ItemDoa { /* Preview action */ }
 }

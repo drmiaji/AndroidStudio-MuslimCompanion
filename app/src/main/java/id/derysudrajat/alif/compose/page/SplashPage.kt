@@ -30,7 +30,7 @@ fun SplashPage() {
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
                 width = Dimension.wrapContent
-            }, painter = painterResource(id = R.drawable.ic_alif), contentDescription = "App Icon")
+            }, painter = painterResource(id = R.drawable.logo_splash), contentDescription = "App Icon")
         }
     }
 }

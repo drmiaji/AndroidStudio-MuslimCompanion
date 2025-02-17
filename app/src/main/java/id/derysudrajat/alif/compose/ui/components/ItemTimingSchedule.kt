@@ -123,7 +123,7 @@ fun ItemTimingSchedule(
                     modifier = Modifier.constrainAs(textNextPray) {
                         bottom.linkTo(textNearestScheduleTime.top)
                         start.linkTo(parent.start)
-                    }, text = "Next Prayer Time", textColor = White
+                    }, text = "Waktu Sholat Selanjutnya", textColor = White
                 )
 
                 TextHeadingXLarge(

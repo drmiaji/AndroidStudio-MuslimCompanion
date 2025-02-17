@@ -70,7 +70,7 @@ fun CompassPage(
                 end.linkTo(parent.end)
                 top.linkTo(back.top)
                 bottom.linkTo(back.bottom)
-            }, text = "Qibla", textColor = White)
+            }, text = "Cari Arah Kiblat", textColor = White)
 
             TextHeadingXLarge(
                 modifier = Modifier.constrainAs(degree) {
@@ -92,7 +92,7 @@ fun CompassPage(
                     colorFilter = ColorFilter.tint(White)
                 )
                 if (isFacingQilba) TextHeading(
-                    text = "You're Facing the Qibla", textColor = White
+                    text = "Kamu Pas Menghadap Kiblat", textColor = White
                 )
                 if (realDegree in 181f..360f && !isFacingQilba) Image(
                     modifier = Modifier
