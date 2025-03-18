@@ -13,13 +13,13 @@ import java.util.Locale
 class AdapterDoa(private val modelBacaan: MutableList<ModelDoa>) :
     RecyclerView.Adapter<AdapterDoa.ListViewHolder>(), Filterable {
 
-    var modelBacaanListFull: List<ModelDoa>
+    var modelBacaanListFull: List<ModelDoa> = ArrayList(modelBacaan)
 
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence): FilterResults {
                 val filteredList: MutableList<ModelDoa> = ArrayList()
-                if (constraint == null || constraint.length == 0) {
+                if (constraint.isEmpty()) {
                     filteredList.addAll(modelBacaanListFull)
                 } else {
                     val filterPattern = constraint.toString().toLowerCase(Locale.ROOT)
@@ -67,9 +67,5 @@ class AdapterDoa(private val modelBacaan: MutableList<ModelDoa>) :
         var tvArabic: TextView = itemView.findViewById(R.id.tvArabic)
         var tvLatin: TextView = itemView.findViewById(R.id.tvLatin)
         var tvTerjemahan: TextView = itemView.findViewById(R.id.tvTerjemahan)
-    }
-
-    init {
-        modelBacaanListFull = ArrayList(modelBacaan)
     }
 }

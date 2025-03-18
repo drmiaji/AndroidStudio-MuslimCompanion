@@ -25,7 +25,7 @@ object TimeUtils {
     val Date.stringFormat  get() : String = DateFormat.format("yyyy-M-d", this).toString()
     val String.timeStamp get() : Timestamp = Timestamp(SimpleDateFormat("yyyy-M-d", Locale.getDefault()).parse(this))
 
-    fun getCalendar(year: Int, month: Int, day: Int) = Calendar.getInstance().apply {
+    fun getCalendar(year: Int, month: Int, day: Int): Calendar = Calendar.getInstance().apply {
         set(Calendar.YEAR, year)
         set(Calendar.MONTH, month)
         set(Calendar.DAY_OF_MONTH, day)
