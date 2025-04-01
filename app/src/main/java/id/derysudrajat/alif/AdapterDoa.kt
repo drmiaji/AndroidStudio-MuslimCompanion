@@ -7,6 +7,7 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.drmiaji.prayertimes.R
 import id.derysudrajat.alif.AdapterDoa.ListViewHolder
 import java.util.Locale
 
